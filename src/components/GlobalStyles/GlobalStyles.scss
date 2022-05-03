@@ -1,0 +1,17 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --primary: #fe2c55;
+}
+html{
+    font-size: 62.5%;
+
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    // Tối ưu để hiển thị font size nhanh nhất
+    text-rendering: optimizeLegibility;
+}
