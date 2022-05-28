@@ -100,20 +100,30 @@
    
 }
 
+
 .action{
 
-}
+    .upload{
+        border-radius: 0;
+        margin-right: 9px;
+        padding-left: 16px;
+        padding-right: 19px;
+        color: var(--black);
+        font-weight: 600;
+    
+        .plus{
+            margin-right: 3px;
+            font-weight: 300;
+        }
+    
+    }
 
-.upload{
-    border-radius: 0;
-    margin-right: 9px;
-    padding-left: 16px;
-    padding-right: 19px;
-    color: var(--black);
-    font-weight: 600;
-
-    .plus{
-        margin-right: 3px;
-        font-weight: 300;
+    .more-btn {
+        background-color: transparent;
+        display: inline-block;
+        padding: 8px 12px;
+        margin: 0 15px;
+        font-size: 2rem;
+        cursor: pointer;
     }
 }

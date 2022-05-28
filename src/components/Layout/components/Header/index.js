@@ -2,14 +2,19 @@ import classNames from "classnames/bind";
 import image from "../../../../assets/images";
 import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faSpinner, faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+    faMagnifyingGlass, faSpinner, faCircleXmark, faPlus, faEllipsisVertical,
+    faLanguage, faPersonCircleQuestion
+} from "@fortawesome/free-solid-svg-icons";
 import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
 
 
 import Tippy from '@tippyjs/react/headless'; // different import path!
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "../../../Button";
+import { faKeyboard } from "@fortawesome/free-regular-svg-icons";
+import Menu from "../../../Popper/Menu";
 
 
 const cx = classNames.bind(styles);
@@ -18,12 +23,22 @@ const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([])
 
+    const MENU_ITEM = [
+        {
+            icon: <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>,
+            title: "English",
+        },
+        {
+            icon: <FontAwesomeIcon icon={faPersonCircleQuestion}></FontAwesomeIcon>,
+            title: 'Feedback and Help',
+            to: '/feedback'
+        },
+        {
+            icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+            title: 'Keyboard shortcut'
+        }
+    ]
 
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([])
-        }, 0)
-    }, [])
     return (
 
         <header className={cx('wrapper')}>
@@ -60,9 +75,16 @@ function Header() {
                     </div>
                 </Tippy >
                 <div className={cx('action')}>
-                    <Button normal className={cx('upload')} leftIcon=
-                        {<FontAwesomeIcon className={cx('plus')} icon={faPlus}></FontAwesomeIcon>}>Tải lên</Button>
+                    <Button text normal className={cx('upload')} leftIcon=
+                        {<FontAwesomeIcon icon={faPlus} className={cx('plus')}></FontAwesomeIcon>}>Tải lên
+                    </Button>
                     <Button primary>Đăng nhập</Button>
+
+                    <Menu items={MENU_ITEM}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header >
