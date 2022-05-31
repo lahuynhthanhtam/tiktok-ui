@@ -27,6 +27,21 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>,
             title: "English",
+            children: {
+                title: 'Language',
+                data: [
+                    {
+                        type: 'language',
+                        title: 'English',
+                        code: 'en',
+                    },
+                    {
+                        type: 'language',
+                        title: 'Vietnamese',
+                        code: 'vn'
+                    }
+                ]
+            }
         },
         {
             icon: <FontAwesomeIcon icon={faPersonCircleQuestion}></FontAwesomeIcon>,
@@ -38,6 +53,17 @@ function Header() {
             title: 'Keyboard shortcut'
         }
     ]
+
+    // Handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // Handle change language
+                break;
+            default:
+        }
+    };
+
 
     return (
 
@@ -80,7 +106,7 @@ function Header() {
                     </Button>
                     <Button primary>Đăng nhập</Button>
 
-                    <Menu items={MENU_ITEM}>
+                    <Menu items={MENU_ITEM} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
