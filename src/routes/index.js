@@ -13,7 +13,8 @@ import Upload from "../pages/Upload"
 const publishRoutes = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
+    // @ là kí tự muốn nối vào (: là những giá trị thay đổi)
+    { path: '/@:nickname', component: Profile },
     // Đặt layout để xét cho những trang k dùng layout mặc định
     { path: '/upload', component: Upload, layout: headerOnly },
     // Đặt layout null để k dùng layout mặc định
