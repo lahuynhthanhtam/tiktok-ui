@@ -9,6 +9,7 @@
     --black: #000;
     
     --width-content-layout: 1150px;
+    --font-family: 'ProximaNova', sans-serif;
 }
 html{
     font-size: 62.5%;
@@ -20,7 +21,7 @@ html{
     margin: 0 ;
 }
 body{
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     // Tối ưu để hiển thị font size nhanh nhất
@@ -86,4 +87,4 @@ input,button,[tabindex]{
 a[href]{
     text-decoration: none;
     color: var(--text-color);
-}
+ }
